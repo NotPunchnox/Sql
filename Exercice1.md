@@ -124,9 +124,9 @@ WHERE D.nopays = 3;
 |       | CONGO      |            |   2    |    2      |            |    2   | AMERIQUE |
 |   2   | TINTIN EN  |<-----------|  '8'   |   '3'     |------------|   '3'  |'BELGIQUE'|
 |       | AMERIQUE   |            +--------------------+            |    4   | MAROC    |
-|  '8'  | 'LE CRABE' |                                              +-------------------+
-|       | AUX PINCES |
-|       | D OR       |
+|  '8'  |'LE CRABE'  |                                              +-------------------+
+|       |'AUX PINCES'|
+|       |'D OR'      |
 +--------------------+
 
 Résultat attendu pour la Belgique: LE CRABE AUX PINCES D'OR
