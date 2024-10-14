@@ -22,5 +22,3 @@ Ce dépôt contient des notes et exercices liés à l'apprentissage du SQL. Il e
 > **Note** : Ce dépôt est uniquement destiné à mes cours et à mes pratiques de développement SQL. Il est public pour des raisons de transparence et de partage de connaissances, mais n'est pas un projet finalisé ou un guide officiel.
 
 ---
-
-Cela devrait être clair pour ceux qui visitent ton dépôt et comprendre que c'est un projet de cours SQL.
