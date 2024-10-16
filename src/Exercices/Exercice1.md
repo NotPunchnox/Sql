@@ -1,4 +1,4 @@
-<link rel="stylesheet" href="{{ '/theme/main.css' | relative_url }}">
+<!-- <link rel="stylesheet" href="{{ '/theme/main.css' | relative_url }}"> -->
 
 # Exercice 1
 
@@ -6,8 +6,8 @@ Voici la représentation des bases de données :
 
 ### Table `album`
 
-| **NOALB** | **TITREALB**                | **DATEALB** |
-|-----------|------------------------------|-------------|
+| **NOALB** | **TITREALB**                  | **DATEALB** |
+|-----------|-------------------------------|-------------|
 | 1         | TINTIN AU CONGO               | 1930        |
 | 2         | TINTIN EN AMERIQUE            | 1931        |
 | 8         | LE CRABE AUX PINCES D'OR      | 1940        |
@@ -16,8 +16,8 @@ Voici la représentation des bases de données :
 
 | **NOPERS** | **NOMPERS**  | **PRENOM**  | **FONCTION** | **SEXE** | **GENTIL** |
 |------------|--------------|-------------|--------------|----------|------------|
-| 1          | TINTIN       | REPORTER    | M            | OUI      |
-| 2          | HADDOCK      | CAPITAINE   | M            | OUI      |
+| 1          | TINTIN       | REPORTER    | M            | OUI      |            |
+| 2          | HADDOCK      | CAPITAINE   | M            | OUI      |            |
 
 ### Table `participer`
 
