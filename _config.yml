@@ -3,9 +3,6 @@ description: "Description de ton projet"
 baseurl: "" # Ne rien mettre ici pour l'instant
 theme: null
 
-include:
-  - theme
-
-layouts_dir: theme/_layouts
+layouts_dir: theme/
 sass:
-  sass_dir: theme/assets/css
+  sass_dir: theme/styles/
