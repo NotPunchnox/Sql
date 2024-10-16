@@ -1,4 +1,4 @@
-<link rel="stylesheet" href="{{ '/theme/styles/main.css' | relative_url }}">
+<link rel="stylesheet" href="{{ '/theme/main.css' | relative_url }}">
 
 # Mise en place de la base de données
 
