@@ -66,7 +66,7 @@ mysql -u root -p tintin < chemin\vers\TINTIN.sql
 ```
 en cas de problèmes avec cette commandes faites celle-ci:
 ```bash
-Get-Content chemin\vers\TINTIN.sql | mysql -u root -p tintin
+Get-Content chemin\vers\TINTIN.sql | mysql -u root -p
 ```
 
 **Remplacez `chemin\vers\TINTIN.sql` par le chemin exact de votre fichier SQL.**
