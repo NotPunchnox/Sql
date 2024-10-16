@@ -1,0 +1,10 @@
+theme: none
+markdown: kramdown
+kramdown:
+  syntax_highlighter_opts:
+    block:
+      css_class: 'highlight'
+
+# Custom CSS pour le thème sombre
+include:
+  - assets/css/style.css
