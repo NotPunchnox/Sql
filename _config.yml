@@ -1,11 +1,11 @@
-title: Cours SQL
-author:
-  name: NotPunchnox
-  email: punchnoxpaypal@gmail.com
+title: "Titre de ton projet"
+description: "Description de ton projet"
+baseurl: "" # Ne rien mettre ici pour l'instant
+theme: null
 
-description: >
-  Prise de note sur cours sql
+include:
+  - theme
 
-theme: minima
-minima:
-  skin: dark
+layouts_dir: theme/_layouts
+sass:
+  sass_dir: theme/assets/css

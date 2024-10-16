@@ -1,16 +1,18 @@
+<link rel="stylesheet" href="{{ '/theme/styles/main.css' | relative_url }}">
+
 # Prise de notes sur cours SQL
 
 Ce dépôt contient des notes et exercices liés à l'apprentissage du SQL. Il est conçu pour un usage personnel et pédagogique, et n'a pas pour but d'être un projet public majeur.
 
 ---
 
-- Mise en place de l'environnement SQL : [Mise en place](./mise-en-place.md)
-- Exercice 1, les bases du SQL : [Exercice 1](./Exercice1.md)
+- Mise en place de l'environnement SQL : [Mise en place](./src/Setup/mise-en-place)
+- Exercice 1, les bases du SQL : [Exercice 1](./src/Exercices/Exercice1)
 
 ---
 
 ### Base de données
-- Fichier SQL : [TINTIN.sql](./TINTIN.sql)
+- Fichier SQL : [TINTIN.sql](./src/DB/TINTIN.sql)
 
 ---
 

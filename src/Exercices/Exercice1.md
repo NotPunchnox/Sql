@@ -1,3 +1,5 @@
+<link rel="stylesheet" href="{{ '/theme/styles/main.css' | relative_url }}">
+
 # Exercice 1
 
 Voici la représentation des bases de données :

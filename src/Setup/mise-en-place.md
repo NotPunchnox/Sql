@@ -1,3 +1,5 @@
+<link rel="stylesheet" href="{{ '/theme/styles/main.css' | relative_url }}">
+
 # Mise en place de la base de données
 
 ## Prérequis
@@ -12,11 +14,11 @@ Scoop est un gestionnaire de packages qui facilite l'installation de logiciels s
 
 1. Ouvrez **PowerShell** en tant qu'administrateur.
 2. Exécutez la commande suivante pour permettre l'exécution de scripts signés :
-    ```powershell
+    ```bash
     Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
     ```
 3. Installez **Scoop** en exécutant la commande suivante :
-    ```powershell
+    ```bash
     Invoke-RestMethod -Uri https://get.scoop.sh | Invoke-Expression
     ```
 4. Scoop est maintenant installé sur votre machine.
@@ -27,7 +29,7 @@ Plus d'informations : [scoop.sh](https://scoop.sh/)
 
 Pour installer MySQL avec **Scoop**, exécutez la commande suivante dans PowerShell :
 
-```powershell
+```bash
 scoop install mysql
 ```
 
@@ -35,7 +37,7 @@ scoop install mysql
 
 Si vous souhaitez utiliser MariaDB à la place de MySQL, utilisez cette commande dans PowerShell :
 
-```powershell
+```bash
 scoop install mariadb
 ```
 
@@ -44,13 +46,13 @@ scoop install mariadb
 ### 1. Démarrer le service MySQL ou MariaDB
 Avant de procéder à l'importation de votre base de données, vous devez démarrer le service MySQL (ou MariaDB). Voici comment démarrer MySQL :
 
-```powershell
+```bash
 net start mysql
 ```
 
 Pour MariaDB, si nécessaire :
 
-```powershell
+```bash
 net start mariadb
 ```
 
@@ -60,11 +62,8 @@ Une fois le service démarré, vous pouvez importer votre base de données à pa
 
 - Placez-vous dans le répertoire où se trouve votre fichier `TINTIN.sql`.
 - Exécutez la commande suivante pour importer le fichier dans une base de données existante appelée `tintin` :
-  
-```bash
-mysql -u root -p tintin < chemin\vers\TINTIN.sql
-```
-en cas de problèmes avec cette commandes faites celle-ci:
+
+
 ```bash
 Get-Content chemin\vers\TINTIN.sql | mysql -u root -p
 ```
