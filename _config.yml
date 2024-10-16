@@ -1,8 +1,2 @@
-title: "Titre de ton projet"
-description: "Description de ton projet"
-baseurl: "" # Ne rien mettre ici pour l'instant
-theme: null
-
-layouts_dir: theme/
-sass:
-  sass_dir: theme/styles/
+title: "Cours SQL"
+description: "Prise de notes sur des cours sql"
