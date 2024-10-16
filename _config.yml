@@ -1,7 +1,10 @@
-title: Your awesome title
+title: Cours SQL
 author:
   name: NotPunchnox
   email: punchnoxpaypal@gmail.com
+
+description: >
+  Prise de note sur cours sql
 
 theme: minima
 minima:
