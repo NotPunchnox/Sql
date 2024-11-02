@@ -83,9 +83,23 @@ SELECT titrealb FROM album ORDER BY titrealb ASC;
 **3° - Dans quel album ne trouve-t-on pas le capitaine haddock ?**
         
 ```sql
-SELECT titrealb 
-FROM album 
-WHERE noalb NOT IN ( SELECT noalb FROM participer WHERE nopers = 2);
+-- En une ligne Et sans jointure
+SELECT titrealb FROM album
+WHERE noalb NOT IN ( SELECT noalb FROM participer WHERE ( SELECT nopers FROM personnage WHERE nompers = 'HADDOCK') LIKE nopers );
+
+-- Avec jointure
+SELECT a.titrealb FROM album a WHERE a.noalb NOT IN (SELECT p.noalb FROM participer pJOIN personnage pers ON p.nopers = pers.nopers WHERE pers nompers = 'HADDOCK');
+
+-- Syntaxe plus lisible:
+SELECT a.titrealb FROM album a
+WHERE a.noalb NOT IN (
+    SELECT p.noalb 
+    FROM participer p
+    JOIN personnage pers ON p.nopers = pers.nopers
+    WHERE pers.nompers = 'HADDOCK'
+);
+
+
 --- 2 = Id du capitaine Hadock
 ```
 ```
@@ -102,9 +116,9 @@ WHERE noalb NOT IN ( SELECT noalb FROM participer WHERE nopers = 2);
 **4° - Quel album se déroule en Belgique ?**
 ```sql
 SELECT A.titrealb FROM album A
-JOIN derouler D ON A.noalb = D.noalb
-WHERE D.nopays = 3;
--- Le numéro de la Belgique dans la table pays
+JOIN derouler d on a.noalb = d.noalb
+JOIN pays p on p.nopays = d.nopays
+WHERE p.nompays = 'BELGIQUE';-- Le numéro de la Belgique dans la table pays
 ```
 ```
 +--------------------------+
