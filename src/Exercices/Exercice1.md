@@ -83,14 +83,28 @@ SELECT titrealb FROM album ORDER BY titrealb ASC;
 **3° - Dans quel album ne trouve-t-on pas le capitaine haddock ?**
         
 ```sql
+-- METHODE LA PLUS IMPORTANTE:
+-- Code avec jointure et sans déclaration de variables:
+SELECT titrealb FROM album
+WHERE album.noalb NOT IN (
+    SELECT noalb FROM participer
+    JOIN personnage ON participer.nopers = personnage.nopers
+    WHERE personnage.nompers = 'HADDOCK'
+);
+
+
 -- En une ligne Et sans jointure
 SELECT titrealb FROM album
-WHERE noalb NOT IN ( SELECT noalb FROM participer WHERE ( SELECT nopers FROM personnage WHERE nompers = 'HADDOCK') LIKE nopers );
+WHERE noalb NOT IN (
+    SELECT noalb FROM participer
+    WHERE (
+        SELECT nopers FROM personnage
+        WHERE nompers = 'HADDOCK'
+    )
+    LIKE nopers
+);
 
--- Avec jointure
-SELECT a.titrealb FROM album a WHERE a.noalb NOT IN (SELECT p.noalb FROM participer pJOIN personnage pers ON p.nopers = pers.nopers WHERE pers nompers = 'HADDOCK');
-
--- Syntaxe plus lisible:
+-- Requête avec déclaration de variables pour la réduire:
 SELECT a.titrealb FROM album a
 WHERE a.noalb NOT IN (
     SELECT p.noalb 
@@ -115,10 +129,17 @@ WHERE a.noalb NOT IN (
 
 **4° - Quel album se déroule en Belgique ?**
 ```sql
-SELECT A.titrealb FROM album A
+-- Sans déclaration de variables
+SELECT titrealb FROM album
+JOIN derouler on album.noalb = derouler.noalb
+JOIN pays on pays.nopays = derouler.nopays
+WHERE pays.nompays = 'BELGIQUE';
+
+-- Avec déclaration de variables pour réduire la requête
+SELECT a.titrealb FROM album a
 JOIN derouler d on a.noalb = d.noalb
 JOIN pays p on p.nopays = d.nopays
-WHERE p.nompays = 'BELGIQUE';-- Le numéro de la Belgique dans la table pays
+WHERE p.nompays = 'BELGIQUE';
 ```
 ```
 +--------------------------+
