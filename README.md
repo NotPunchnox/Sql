@@ -8,8 +8,8 @@ Ce dépôt contient des notes et exercices liés à l'apprentissage du SQL. Il e
 
 - Mise en place de l'environnement SQL : [Mise en place](./src/Setup/mise-en-place)
 - Exercice 1, les bases du SQL : [Exercice 1](./src/Exercices/Exercice1)
-- Exercice 2, Trier des informations : [Exercice 2](./src/Exercices/Exercice2.md)
-- Exercice 3, Suite de l'exercice 2: [Exercice 3](./src/Exercices/Exercice3.md)
+- Exercice 2, Trier des informations : [Exercice 2](./src/Exercices/Exercices2.md)
+- Exercice 3, Suite de l'exercice 2: [Exercice 3](./src/Exercices/Exercices3.md)
 
 ---
 
