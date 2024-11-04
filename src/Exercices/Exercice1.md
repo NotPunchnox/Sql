@@ -114,7 +114,6 @@ WHERE a.noalb NOT IN (
 );
 
 
---- 2 = Id du capitaine Hadock
 ```
 ```
 +--------------------+
