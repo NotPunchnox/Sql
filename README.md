@@ -12,7 +12,7 @@ Ce dépôt contient des notes et exercices liés à l'apprentissage du SQL. Il e
 - [TP-1 : Exercice 3](./src/Exercices/TP-1-exo2), Suite de l'exercice 2
 
 - [TP-2 : Exercice 1](./src/Exercices/TP-2.md), Début des exos avec `bd_ecole.sql`
-- [TP-2 : Exercice 2](./src/Exercices/TP-2-exo2.md), Les fonctions d'agrégation.
+- [TP-3 : Exercice 1](./src/Exercices/TP-2-exo2.md), Les fonctions d'agrégation.
 
 
 ---
