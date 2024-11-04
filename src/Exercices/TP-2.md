@@ -3,23 +3,23 @@
 ### Base de donnée utilisé: [`db_ecole.sql`](../DB/db_ecole.sqls) 
 
 1. Liste des personnes n’ayant pas renseigné leur numéro de téléphone ni leur adresse e-mail:
-```sql
-select pers_nom from personne
-where personne.pers_email is null
-or personne.pers_tel is null;
-```
-Résultat:
-```m
-+----------+
-| pers_nom |
-+----------+
-| REBREDO  |
-| SANCHEZ  |
-| COAT     |
-| DCAPRIO  |
-| MESSON   |
-+----------+
-```
+    ```sql
+    select pers_nom from personne
+    where personne.pers_email is null
+    or personne.pers_tel is null;
+    ```
+    Résultat:
+    ```m
+    +----------+
+    | pers_nom |
+    +----------+
+    | REBREDO  |
+    | SANCHEZ  |
+    | COAT     |
+    | DCAPRIO  |
+    | MESSON   |
+    +----------+
+    ```
 
 2. Liste des personnes ayant renseigné une adresse-mail mais pas de n° de téléphone
 ```sql

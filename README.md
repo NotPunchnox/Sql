@@ -10,7 +10,7 @@ Ce dépôt contient des notes et exercices liés à l'apprentissage du SQL. Il e
 - [TP-1 : Exercice 1](./src/Exercices/TP-1-exo1), les bases du SQL
 - [TP-1 : Exercice 2](./src/Exercices/TP-1-exo1), Trier des informations
 - [TP-1 : Exercice 3](./src/Exercices/TP-1-exo2), Suite de l'exercice 2
----
+
 - [TP-2 : Exercice 1](./src/Exercices/TP-2.md), Début des exercices avec la base de donnée `bd_ecole.sql`
 
 
