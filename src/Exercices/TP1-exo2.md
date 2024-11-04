@@ -2,7 +2,7 @@
 
 ### base de donnée: Tintin.sql
 
-1. Lister l’ensemble des informations concernant les personnages:
+1. **Lister l’ensemble des informations concernant les personnages:**
 ```sql
 select * from personnage;
 ```
@@ -17,7 +17,7 @@ select * from personnage;
 ```
 
 
-2. Afficher le titre et la date de de chaque albums:
+2. **Afficher le titre et la date de de chaque albums:**
 ```sql
 select titrealb, datealb from album;
 ```
@@ -32,7 +32,7 @@ select titrealb, datealb from album;
 +--------------------------+---------+
 ```
 
-3. Lister les albums par ordre chronologique (du plus ancien au plus récent):
+3. **Lister les albums par ordre chronologique (du plus ancien au plus récent):**
 ```sql
 select titrealb, datealb from album order by asc;
 ```
@@ -47,7 +47,7 @@ select titrealb, datealb from album order by asc;
 +--------------------------+---------+
 ```
 
-4. Lister le contenu de la table DEROULER (3 requêtes à écrire)
+4. **Lister le contenu de la table DEROULER (3 requêtes à écrire)**
 
     - trié par ordre croissant du N°Album et décroissant du N°Pays
 
