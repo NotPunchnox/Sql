@@ -6,7 +6,7 @@
 ```sql
 select pers_nom from personne
 where personne.pers_email is null
-or personne.pers_tel is null;
+and personne.pers_tel is null;
 ```
 Résultat:
 ```m

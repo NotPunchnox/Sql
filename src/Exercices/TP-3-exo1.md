@@ -139,32 +139,64 @@ Résultat:
 
 8. La moyenne générale de la classe 1TSSIO
 ```sql
-
+select AVG(note_obtenue) as Moyenne from notes
+join evaluation on notes.note_eval_id = evaluation.evaluation_id
+join classe on classe.classe_id = evaluation.eval_clas_id
+where classe.clas_nom = "1TSSIO";
 ```
 
 Résultat:
 ```m
-
++---------+
+| Moyenne |
++---------+
+| 14.5833 |
++---------+
 ```
 
 9. La moyenne générale par classe
 ```sql
-
+select clas_nom as nom_classe, ROUND(AVG(note_obtenue), 2) as Moyenne from notes
+join evaluation on notes.note_eval_id = evaluation.evaluation_id
+join classe on classe.classe_id = evaluation.eval_clas_id
+group by classe.clas_nom;
 ```
 
 Résultat:
 ```m
-
++------------+---------+
+| nom_classe | Moyenne |
++------------+---------+
+| "1TSSIO"   |   14.58 |
+| "2TSSIO"   |   13.67 |
++------------+---------+
 ```
 
 10. La moyenne générale de chaque élève
 ```sql
+select personne.pers_nom as Nom, personne.pers_prenom as Prénom, ROUND(AVG(note_obtenue), 2) as Moyenne from notes
 
+join evaluation on notes.note_eval_id = evaluation.evaluation_id
+join classe on classe.classe_id = evaluation.eval_clas_id
+join eleve on eleve.eleve_id = notes.note_elev_id
+join personne on personne.personne_id = eleve.eleve_id
+
+group by eleve.eleve_id;
 ```
 
 Résultat:
 ```m
-
++---------+---------+---------+
+| Nom     | Prénom  | Moyenne |
++---------+---------+---------+
+| REBREDO | Tony    |   14.67 |
+| SANCHEZ | Carlos  |   19.00 |
+| COAT    | José    |   10.00 |
+| DCAPRIO | Marco   |   14.67 |
+| MARCO   | Michel  |   19.00 |
+| MARSON  | Marine  |   12.00 |
+| MILANO  | Karine  |   10.00 |
++---------+---------+---------+
 ```
 
 11. La moyenne générale pour chaque matière
