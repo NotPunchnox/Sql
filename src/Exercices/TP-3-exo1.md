@@ -177,7 +177,6 @@ Résultat:
 select personne.pers_nom as Nom, personne.pers_prenom as Prénom, ROUND(AVG(note_obtenue), 2) as Moyenne from notes
 
 join evaluation on notes.note_eval_id = evaluation.evaluation_id
-join classe on classe.classe_id = evaluation.eval_clas_id
 join eleve on eleve.eleve_id = notes.note_elev_id
 join personne on personne.personne_id = eleve.eleve_id
 
@@ -201,80 +200,157 @@ Résultat:
 
 11. La moyenne générale pour chaque matière
 ```sql
+select ROUND(AVG(notes.note_obtenue), 2) as Eval, matr_nom_court as Matière from matiere
+join evaluation on evaluation.eval_matr_id = matiere.matiere_id
+join notes on notes.note_eval_id = evaluation.eval_matr_id
 
+group by matr_nom_court;
 ```
 
 Résultat:
 ```m
-
++-------+----------+
+| Eval  | Matière  |
++-------+----------+
+| 14.25 | SI3      |
+| 13.50 | SLAM1    |
+| 13.67 | SLAM3    |
++-------+----------+
 ```
 
 12. La plus grande note obtenue par l’élève « Tony »
 ```sql
-
+select max(note_obtenue) from notes
+join personne on personne.personne_id = notes.note_elev_id
+where personne.pers_prenom = "Tony";
 ```
 
 Résultat:
 ```m
-
++-------------------+
+| max(note_obtenue) |
++-------------------+
+|                17 |
++-------------------+
 ```
 
 13. La plus haute et la plus basse note obtenue pour chaque élève
 ```sql
-
+select min(note_obtenue) as "Note la plus basse", max(note_obtenue) as "Note la plus haute", personne.pers_nom, personne.pers_prenom from notes
+join personne on personne.personne_id = notes.note_elev_id
+group by personne.personne_id;
 ```
 
 Résultat:
 ```m
-
++--------------------+--------------------+----------+-------------+
+| Note la plus basse | Note la plus haute | pers_nom | pers_prenom |
++--------------------+--------------------+----------+-------------+
+|                 12 |                 17 | REBREDO  | Tony        |
+|                 19 |                 19 | MARCO    | Michel      |
+|                 18 |                 20 | SANCHEZ  | Carlos      |
+|                  7 |                 14 | COAT     | José        |
+|                 12 |                 12 | MARSON   | Marine      |
+|                 10 |                 10 | MILANO   | Karine      |
+|                 14 |                 15 | DCAPRIO  | Marco       |
++--------------------+--------------------+----------+-------------+
 ```
 
 14. Le nombre d’élèves ayant une moyenne générale supérieure à 10
 ```sql
+select count(*) as "Nombre d'élèves" from (
 
+    select eleve.eleve_id from notes
+    join evaluation on notes.note_eval_id = evaluation.evaluation_id
+    join eleve on eleve.eleve_id = notes.note_elev_id
+
+    group by eleve.eleve_id
+    having AVG(notes.note_obtenue) > 10
+
+) as Moyenne;
 ```
 
 Résultat:
 ```m
-
++-------------------+
+| Nombre d élèves   |
++-------------------+
+|                 5 |
++-------------------+
 ```
 
 15. Les élèves dont la moyenne générale est égale ou inférieure à 10
 ```sql
+select count(*) as "Nombre d'élèves" from (
 
+    select eleve.eleve_id from notes
+    join evaluation on notes.note_eval_id = evaluation.evaluation_id
+    join eleve on eleve.eleve_id = notes.note_elev_id
+
+    group by eleve.eleve_id
+    having AVG(notes.note_obtenue) <= 10
+
+) as Moyenne;
 ```
 
 Résultat:
 ```m
-
++-------------------+
+| Nombre d élèves   |
++-------------------+
+|                 2 |
++-------------------+
 ```
 
 16. Calculer la moyenne générale de la classe 1TSSIO **sans passer par la fonction AVG**
 ```sql
-
+select round(sum(note_obtenue) / count(note_obtenue), 2) as Moyenne from notes
+join evaluation on notes.note_eval_id = evaluation.evaluation_id
+join classe on classe.classe_id = evaluation.eval_clas_id
+where classe.clas_nom = "1TSSIO";
 ```
 
 Résultat:
 ```m
-
++---------+
+| Moyenne |
++---------+
+|  14.58  |
++---------+
 ```
 
 17. Le nombre de matières évaluées
 ```sql
-
+select count(matiere_id) as "Nombre matière evaluées" from matiere
+join evaluation e on e.evaluation_id = matiere.matiere_id
 ```
 
 Résultat:
 ```m
-
++---------------------------+
+| Nombre matière evaluées   |
++---------------------------+
+|                         4 |
++---------------------------+
 ```
 
 18. La moyenne d‘âge des étudiants
 ```sql
-
+select TIMESTAMPDIFF(YEAR, PERS_DATE_NAISSANCE, CURDATE()) as "Moyenne d'age" from personne
+join eleve on eleve.eleve_id = personne_id;
 ```
 
 Résultat:
-```m
-
+```md
++---------------+
+| Moyenne d'age |
++---------------+
+|            32 |
+|            34 |
+|            32 |
+|            32 |
+|            33 |
+|            33 |
+|            32 |
++---------------+
 ```
