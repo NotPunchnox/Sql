@@ -7,16 +7,18 @@ Ce dépôt contient des notes et exercices liés à l'apprentissage du SQL. Il e
 ---
 
 - Mise en place de l'environnement SQL ( client line interface sans vm ) : [Mise en place](./src/Setup/mise-en-place)
-- [TP-1 : Exercice 1](./src/Exercices/TP-1-exo1.md), les bases du SQL
-- [TP-1 : Exercice 2](./src/Exercices/TP-1-exo2.md), Trier des informations
-- [TP-1 : Exercice 3](./src/Exercices/TP-1-exo3.md), Suite de l'exercice 2
+- **Commandes de com avec mysql**
+    - [TP-1 : Exercice 1](./src/Exercices/TP-1-exo1.md), les bases du SQL
+    - [TP-1 : Exercice 2](./src/Exercices/TP-1-exo2.md), Trier des informations
+    - [TP-1 : Exercice 3](./src/Exercices/TP-1-exo3.md), Suite de l'exercice 2
 
-- [TP-2 : Exercice 1](./src/Exercices/TP-2-exo1.md), Début des exos avec `bd_ecole.sql`
-- [TP-2 : Exercice 2](./src/Exercices/TP-2-exo2.md), Début des exos avec `bd_ecole.sql`
+    - [TP-2 : Exercice 1](./src/Exercices/TP-2-exo1.md), Début des exos avec `bd_ecole.sql`
+    - [TP-2 : Exercice 2](./src/Exercices/TP-2-exo2.md), Début des exos avec `bd_ecole.sql`
 
-- [TP-3 : Exercice 1](./src/Exercices/TP-3-exo1.md), Les fonctions d'agrégation.
+    - [TP-3 : Exercice 1](./src/Exercices/TP-3-exo1.md), Les fonctions d'agrégation.
 
-
+- **Créations & modification de bases de données**
+    - [TP-4 : Exercice 1](./src/Exercices/TP-4-exo1.md), Création de base de donnée: `db_voyage.sql`
 ---
 
 ### Base de données
