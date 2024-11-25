@@ -293,6 +293,7 @@ select count(*) as "Nombre d'élèves" from (
 ) as Moyenne;
 ```
 
+
 Résultat:
 ```m
 +-------------------+
