@@ -69,7 +69,7 @@ Grant quoi on où to quoi
 ```
 
 1. **Créer un utilisateur de chaque type**
-    - Créer les utilisateurs Admin, Vendeur, et Client en leur attribuant des droits spécifiques selon le tableau.
+    - Créer les utilisateurs `Admin`, `Vendeur`, et `Client` en leur attribuant des droits spécifiques selon le tableau.
 
     a) __Commande pour créer les utilisateurs__
     ```sql
