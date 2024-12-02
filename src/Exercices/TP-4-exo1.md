@@ -71,6 +71,20 @@ update voyages set NbInscrits = (
 where novoyage in (select novoyage from InscritsParVoyage);
 ```
 
+```sql
+with InscritsParVoyage as (
+    select novoyage, count(novoyage) as count from inscrits
+    group by novoyage
+)
+
+update voyages set NbInscrits = (
+    select count from InscritsParVoyage
+    where InscritsParVoyage.novoyage = voyages.novoyage
+)
+
+where novoyage in (select novoyage from InscritsParVoyage);
+```
+
 Résultat:
 ```m
 +----------+-------------------------------+------------+-------+------------+---------------+
