@@ -19,6 +19,9 @@ Ce dépôt contient des notes et exercices liés à l'apprentissage du SQL. Il e
 
 - **Créations & modification de bases de données**
     - [TP-4 : Exercice 1](./src/Exercices/TP-4-exo1.md), Création de base de donnée: `db_voyage.sql`
+
+- **Droits des Utilisateurs sur la Base de Données**
+    - [TP-5 : Exercice 1](./src/Exercices/TP5-exo1.md), Gestion des permissions utilisateurs
 ---
 
 ### Base de données
