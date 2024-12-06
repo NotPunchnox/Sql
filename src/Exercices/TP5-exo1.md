@@ -94,7 +94,7 @@ Grant quoi on où to quoi
     grant update(AdrCli, TelCli) on voyages.clients to Clients@localhost;
     ```
 
-    b) __Commande pour voir les utilisateurs__
+    c) __Commande pour voir les utilisateurs__
     ```sql
     select user from mysql.user
 
