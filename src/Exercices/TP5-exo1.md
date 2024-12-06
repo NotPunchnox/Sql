@@ -81,10 +81,10 @@ Grant quoi on où to quoi
     b) __Commande pour ajouter les permissions__
     ```sql
     --Permission de Admin
-    grant all privileges on *.* to Admin@localhost;
+    grant all privileges on voyages.* to Admin@localhost;
 
-    --Permission de Vendeurs
-    grant insert, update, drop on voyages.* to Vendeurs@localhost;
+    --Permission de Vendeurs ( Ajout de select car obligatoire pour update, drop... )
+    grant select, insert, update, drop on voyages.* to Vendeurs@localhost;
 
     -- Permission de Clients
     grant select on voyages.voyages to Clients@localhost;
